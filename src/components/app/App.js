@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <div className="form-wrapper">
         <div className="form-top">
-          <h2 className="submain-title">Генерация слова в указанном падеже</h2>
+          <h2 className="submain-title">Склонение слова в указанном падеже</h2>
           <button className="btn-close">&#10006;</button>
         </div>
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
