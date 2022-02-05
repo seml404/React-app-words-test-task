@@ -124,31 +124,6 @@ body {
   background: #b4b4b4;
 }
 
-.btn-social-media {
-  display: flex;
-  width: 82px;
-  height: 82px;
-  border-radius: 50%;
-  background: none;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgb(218, 207, 207);
-  padding: 20px;
-}
-
-.error-message {
-  color: red;
-}
-
-.form-footer-text {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  color: grey;
-}
-
 .form-footer-text-big {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -203,10 +178,6 @@ body {
   border: none;
 }
 
-.input-active {
-  border-bottom: 1px solid black;
-}
-
 .input-container {
   padding-top: 24px;
 }
@@ -215,39 +186,9 @@ body {
   color: #b4b4b4;
 }
 
-.input-error {
-  border: 2px solid rgb(248, 141, 141);
-  border-radius: 10px;
-}
-
 .input-label {
   font-size: 12px;
   padding-bottom: 15px;
-}
-
-.link {
-  color: #8a7efa;
-}
-
-.link-bold {
-  font-weight: 700;
-}
-
-.social-media-icon {
-  display: block;
-  width: 100%;
-  border-radius: 50%;
-}
-
-.social-media-icons {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.special-sign {
-  position: absolute;
-  right: 0;
-  color: #ff00c1;
 }
 
 .submain-title {

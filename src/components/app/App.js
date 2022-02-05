@@ -9,6 +9,9 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    let word = userWord;
+    switch (userWord[userWord.length - 1]) {
+    }
   }
 
   function handleInputChange(event) {
@@ -43,6 +46,7 @@ function App() {
               value={userWord}
               type="text"
               placeholder="Введите слово"
+              className="input"
               onChange={(e) => handleInputChange(e)}
             ></input>
           </div>
@@ -54,7 +58,11 @@ function App() {
           )}
           <div className="input-container">
             <p className="input-label">Падеж</p>
-            <select onChange={(e) => toggleFilter(e.target.value)} id="cases">
+            <select
+              onChange={(e) => toggleFilter(e.target.value)}
+              id="cases"
+              className="input"
+            >
               <option defaultValue id="info">
                 Выберите падеж
               </option>
