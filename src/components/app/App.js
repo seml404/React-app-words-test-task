@@ -9,47 +9,53 @@ function App() {
 
   function defineEnding(wordPassed, casePassed) {
     let ending = {}, wordResult;
-    if (wordPassed[wordPassed.length - 1] === 'а') {
-      ending = { Именительный: 'а', Родительный: 'и', Винительный: 'е', Дательный: 'у', Творительный: 'ой', Предложный: 'е' };
-      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 1] === 'я') {
-      ending = { Именительный: 'я', Родительный: 'и', Винительный: 'е', Дательный: 'ю', Творительный: 'ей', Предложный: 'е' };
-      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 1] === 'о') {
-      ending = { Именительный: 'о', Родительный: 'а', Винительный: 'у', Дательный: 'о', Творительный: 'ом', Предложный: 'е' };
-      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 1] === 'е') {
-      ending = { Именительный: 'е', Родительный: 'я', Винительный: 'ю', Дательный: 'е', Творительный: 'ем', Предложный: 'и' };
-      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed === 'мать' || wordPassed === 'дочь') {
-      ending = { Именительный: 'ь', Родительный: 'ери', Винительный: 'ери', Дательный: 'ь', Творительный: 'ерью', Предложный: 'ери' };
+
+    if (wordPassed === 'мать' || wordPassed === 'дочь') {
+      ending = { Именительный: 'ь', Родительный: 'ери', Дательный: 'ери', Винительный: 'ь', Творительный: 'ерью', Предложный: 'ери' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
     } else if (wordPassed === 'путь') {
-      ending = { Именительный: 'ь', Родительный: 'и', Винительный: 'и', Дательный: 'ь', Творительный: 'ем', Предложный: 'и' };
+      ending = { Именительный: 'ь', Родительный: 'и', Дательный: 'и', Винительный: 'ь', Творительный: 'ем', Предложный: 'и' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
     } else if (['бремя', 'время', 'вымя', 'знамя', 'имя', 'пламя', 'племя', 'семя', 'стремя', 'темя'].includes(wordPassed)) {
-      ending = { Именительный: 'я ', Родительный: 'ени', Винительный: 'ени', Дательный: 'я', Творительный: 'енем', Предложный: 'ени' };
+      ending = { Именительный: 'я ', Родительный: 'ени', Дательный: 'ени', Винительный: 'я', Творительный: 'енем', Предложный: 'ени' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
     } else if (wordPassed === 'дитя') {
-      ending = { Именительный: 'я', Родительный: 'яти', Винительный: 'яти', Дательный: 'я', Творительный: 'ятей', Предложный: 'яти' };
+      ending = { Именительный: 'я', Родительный: 'яти', Дательный: 'яти', Винительный: 'я', Творительный: 'ятей', Предложный: 'яти' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 2] === 'ой') {
-      ending = { Именительный: 'ой', Родительный: 'ого', Винительный: 'ому', Дательный: 'ого', Творительный: 'ым', Предложный: 'ом' };
+    }
+    else if (/[бвгдзлмнпрстфх]/.test(wordPassed.substring(wordPassed.length - 2)[0]) && wordPassed[wordPassed.length - 1] === 'а') {
+      ending = { Именительный: 'а', Родительный: 'ы', Дательный: 'е', Винительный: 'у', Творительный: 'ой', Предложный: 'е' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
+    }
+    else if (wordPassed[wordPassed.length - 1] === 'а') {
+      ending = { Именительный: 'а', Родительный: 'и', Дательный: 'е', Винительный: 'у', Творительный: 'ой', Предложный: 'е' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
+    } else if (wordPassed[wordPassed.length - 1] === 'я') {
+      ending = { Именительный: 'я', Родительный: 'и', Дательный: 'е', Винительный: 'ю', Творительный: 'ей', Предложный: 'е' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
+    } else if (wordPassed[wordPassed.length - 1] === 'о') {
+      ending = { Именительный: 'о', Родительный: 'а', Дательный: 'у', Винительный: 'о', Творительный: 'ом', Предложный: 'е' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
+    } else if (wordPassed[wordPassed.length - 1] === 'е') {
+      ending = { Именительный: 'е', Родительный: 'я', Дательный: 'ю', Винительный: 'е', Творительный: 'ем', Предложный: 'и' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
+    } else if (wordPassed.substring(wordPassed.length - 2) === 'ой') {
+      ending = { Именительный: 'ой', Родительный: 'ого', Дательный: 'ому', Винительный: 'ого', Творительный: 'ым', Предложный: 'ом' };
       wordResult = wordPassed.substring(0, wordPassed.length - 2) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 2] === 'ая') {
-      ending = { Именительный: 'ая', Родительный: 'ой', Винительный: 'ой', Дательный: 'ую', Творительный: 'ой', Предложный: 'ой' };
+    } else if (wordPassed.substring(wordPassed.length - 2) === 'ая') {
+      ending = { Именительный: 'ая', Родительный: 'ой', Дательный: 'ой', Винительный: 'ую', Творительный: 'ой', Предложный: 'ой' };
       wordResult = wordPassed.substring(0, wordPassed.length - 2) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 2] === 'ть' || wordPassed[wordPassed.length - 2] === 'чь' || wordPassed[wordPassed.length - 2] === 'шь') {
-      ending = { Именительный: 'ь', Родительный: 'и', Винительный: 'и', Дательный: 'ь', Творительный: 'ью', Предложный: 'и' };
+    } else if (wordPassed.substring(wordPassed.length - 2) === 'ть' || wordPassed.substring(wordPassed.length - 2) === 'чь' || wordPassed.substring(wordPassed.length - 2) === 'шь') {
+      ending = { Именительный: 'ь', Родительный: 'и', Дательный: 'и', Винительный: 'ь', Творительный: 'ью', Предложный: 'и' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
     } else if (wordPassed[wordPassed.length - 1] === 'й') {
-      ending = { Именительный: 'й', Родительный: 'я', Винительный: 'ю', Дательный: 'й', Творительный: 'ем', Предложный: 'е' };
+      ending = { Именительный: 'й', Родительный: 'я', Дательный: 'ю', Винительный: 'й', Творительный: 'ем', Предложный: 'е' };
       wordResult = wordPassed.substring(0, wordPassed.length - 1) + ending[casePassed];
-    } else if (wordPassed[wordPassed.length - 3] === 'онь') {
-      ending = { Именительный: 'онь', Родительный: 'ня', Винительный: 'ню', Дательный: 'онь', Творительный: 'нем', Предложный: 'не' };
-      wordResult = wordPassed.substring(0, wordPassed.length - 4) + ending[casePassed];
+    } else if (wordPassed.substring(wordPassed.length - 2) === 'нь') {
+      ending = { Именительный: 'нь', Родительный: 'ня', Дательный: 'ню', Винительный: 'ня', Творительный: 'нем', Предложный: 'не' };
+      wordResult = wordPassed.substring(0, wordPassed.length - 2) + ending[casePassed];
     } else {
-      ending = { Именительный: '', Родительный: 'а', Винительный: 'у', Дательный: '', Творительный: 'ом', Предложный: 'е' };
+      ending = { Именительный: '', Родительный: 'а', Дательный: 'у', Винительный: '', Творительный: 'ом', Предложный: 'е' };
       wordResult = (wordPassed + ending[casePassed]).trim();
     }
     return wordResult;
@@ -59,7 +65,7 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     let res = defineEnding(userWord, userCase);
-    setResultWord(res)
+    setResultWord(res);
   }
 
   function handleInputChange(event) {
@@ -69,9 +75,14 @@ function App() {
     } else {
       setErrorWord(false);
     }
+    if (!errorWord) {
+      setUserWord(event.target.value);
+    }
   }
   function toggleFilter(value) {
-    setUserCase(value);
+    if (value !== 'Выберите падеж') {
+      setUserCase(value);
+    }
   }
 
   return (
@@ -106,6 +117,7 @@ function App() {
               onChange={(e) => toggleFilter(e.target.value)}
               id="cases"
               className="input"
+              value={userCase}
             >
               <option defaultValue id="info">
                 Выберите падеж
@@ -122,14 +134,14 @@ function App() {
             <button
               className="btn btn-main"
               type="submit"
-            // disabled={userWord && userCase}
+              disabled={errorWord || !userWord || !userCase}
             >
-              <p>Узнать слово</p>
+              <p>Узнать склонение</p>
             </button>
           </div>
           <div>
             {resultWord
-              ? resultWord
+              ? <p className="text text-important">{resultWord}</p>
               : "введите слово и здесь будет его склонение"}
           </div>
         </form>

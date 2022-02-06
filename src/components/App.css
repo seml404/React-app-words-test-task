@@ -195,3 +195,21 @@ body {
   display: flex;
   align-items: center;
 }
+
+.text-important{
+margin-top: 20px;
+display: flex;
+
+align-items:center;
+justify-content: center;
+font-weight: 700;
+border-radius: 10px;
+  height: 49px;
+  padding-bottom: 8px;
+  background-color: #e8ecf5;
+  border-bottom: 1px solid #b4b4b4;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+}
