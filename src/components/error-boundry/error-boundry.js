@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Error from "../error/error";
+import Error from "../error/error.js";
 
 export default class ErrorBoundry extends Component {
   state = {
